@@ -1,1 +1,44 @@
+AHMED KHADAR AHMED                       SCT221-0780/2022
+ASSIGNMENT 1 
+
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    printf("Simple CLI Calculator in C\n");
+    printf("Enter operation (e.g., 5 + 3): ");
+
+    scanf("%lf %c %lf", &num1, &operator, &num2);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case '/':
+            if (num2 != 0)
+                result = num1 / num2;
+            else {
+                printf("Error: Division by zero!\n");
+                return 1;
+            }
+            printf("Result: %.2lf\n", result);
+            break;
+        default:
+            printf("Invalid operator.\n");
+            return 1;
+    }
+
+    return 0;
+}
 
